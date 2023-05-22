@@ -1,0 +1,102 @@
+body {
+
+  background-color: grey;
+
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+
+}
+
+header, footer {
+
+background-color: white;
+
+}
+
+
+.navbar {
+
+  text-decoration: none;
+  background-color: rgb(29, 132, 158);
+
+
+}
+
+.navbar ul {
+
+
+  
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+   
+ 
+
+}
+
+.navbar li {
+  float: left;
+}
+
+.navbar li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+table  {
+
+  background-color: rgb(255, 255, 255);
+  border: 2px solid;
+  text-decoration: none;
+ 
+
+}
+
+tr {
+
+  border:  1px solid;
+  padding: 5px 15px 5px 15px;
+  border: 1px solid black;
+  border-collapse: collapse;
+  text-decoration: none;
+
+}
+
+td {
+
+  border-bottom: 1px solid #ddd;
+  text-decoration: none;
+  padding-left: 10px;
+  padding-right: 10px;
+
+
+}
+
+.button-update {
+  background-color: #4CAF50; /* Green */
+  border: none;
+  border-radius: 12px;
+  color: white;
+  padding: 5px 15px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 12px;
+
+}
+
+.button-delete {
+  background-color: #af4c4c; /* Green */
+  border: none;
+  border-radius: 12px;
+  color: white;
+  padding: 5px 15px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 12px;
+
+}

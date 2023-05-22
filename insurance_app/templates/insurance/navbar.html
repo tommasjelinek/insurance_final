@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+{% load static %}
+
+<div class="navbar">
+
+<ul>
+  <li><a href="{% url 'home' %}">HOME</a></li>
+
+  <li><a href="{% url 'users_list' %}">POJISTENCI</a></li>
+
+  <li><a href="{% url 'products' %}">POJISTENI</a></li>
+
+  <li><a href="{% url 'add_user' %}">PRIDAT POJISTENCE</a></li>
+
+
+</ul>
+
+
+
+</div>
+
+
+
+</body>
+</html>

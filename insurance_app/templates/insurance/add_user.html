@@ -1,0 +1,49 @@
+{% extends 'insurance/base.html'%}
+
+{% load static %}
+
+{% include 'insurance/navbar.html' %}
+
+
+
+{% block content %}
+
+<h1>Pridat pojistence</h1>
+
+<div class="add_form">
+
+    {% if submitted %}
+
+    <p>Your registration was succesfull</p>
+
+    {% else %}
+
+
+
+
+
+    <form action="" method="POST">
+        {% csrf_token %}
+
+        {{ form.as_p}}
+
+
+        <input type="submit" value="Pridat">
+
+        <button type="button" ><a href="{% url 'users_list' %}">Zpet</a></button>
+
+
+
+
+
+    </form>
+
+        {% endif %}
+
+
+
+</div>
+
+
+
+{% endblock %}

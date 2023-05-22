@@ -1,0 +1,43 @@
+{% extends 'insurance/base.html'%}
+
+{% load static %}
+
+{% include 'insurance/navbar.html' %}
+
+{% block content %}
+
+
+
+
+<h2>   {{ user.first_name }} {{ user.last_name }} </h2>     </br>
+ <p>Adresa: {{ user.address }}</p>
+ <p>Kontakt: {{ user.phone }}</p>
+ <p>Email: {{ user.email }}</p>
+
+
+</br>
+
+
+<button class="button-update" ><a href="{% url 'update_user' user.id %}">AKTUALIZOVAT</a></button>
+<button class="button-delete"><a  href="{% url 'delete_user' user.id %}">SMAZAT POJISTENCE</a></button>
+
+
+</br>
+</br>
+
+PRIDAT POJISTENI:
+
+</br>
+</br>
+
+
+
+
+{% for x in product_list %}
+
+{{ x }}
+
+
+{% endfor %}
+
+{% endblock %}

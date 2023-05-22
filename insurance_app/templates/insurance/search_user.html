@@ -1,0 +1,22 @@
+{% extends 'insurance/base.html'%}
+
+{% load static %}
+
+{% include 'insurance/navbar.html' %}
+
+{% block content %}
+
+
+
+    {% if searched %}
+
+    <h1>Nalezene udaje...</h1>
+
+        {% else %}
+
+    <h1>Zapomeli jste zadat co chcete vyhledat</h1>
+
+    {% endif%]
+
+
+{% endblock %}

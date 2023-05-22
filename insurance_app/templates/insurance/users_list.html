@@ -1,0 +1,48 @@
+{% extends 'insurance/base.html'%}
+
+{% load static %}
+
+{% include 'insurance/navbar.html' %}
+
+
+
+{% block content %}
+
+<h3>Seznam Pojistencu</h3>
+
+<table>
+    <tbody>
+
+    <tr>
+    <th>Jmeno</th>
+    <th>Adresa</th>
+    <th></th>
+  </tr>
+
+         {% for user in users_list %}
+
+
+        <td><a href="{% url 'show_user' user.id %}">  {{ user }} </a></td>
+        <td> {{ user.address }} </td>
+        <td><button class="button-update" ><a href="{% url 'update_user' user.id %}">AKTUALIZOVAT</a></button></td>
+        <td><button class="button-delete"><a  href="{% url 'delete_user' user.id %}">SMAZAT POJISTENCE</a></button></td>
+
+
+         </tbody>
+
+         {% endfor %}
+</table>
+
+
+
+</br>
+
+
+
+
+
+
+
+
+
+{% endblock %}
