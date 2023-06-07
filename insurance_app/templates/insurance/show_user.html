@@ -6,38 +6,119 @@
 
 {% block content %}
 
+<br>
+
+<table>
+
+<tr>
+    <td>
+      <h2>{{user.first_name }} {{ user.last_name }} </h2>
+      <p>Adresa: {{ user.address }}</p>
+      <p>Kontakt: {{ user.phone }}</p>
+      <p>Email: {{ user.email }}</p>
+      <p>ID uzivatele: {{ user.id }}</p>
+    </td>
 
 
+</tr>
 
-<h2>   {{ user.first_name }} {{ user.last_name }} </h2>     </br>
- <p>Adresa: {{ user.address }}</p>
- <p>Kontakt: {{ user.phone }}</p>
- <p>Email: {{ user.email }}</p>
+</table>
+
+</br>
+
+
+<button class="" ><a href="{% url 'update_user' user.id %}">EDITOVAT POJISTENCE</a></button>
+<button class=""><a  href="{% url 'delete_user' user.id %}">SMAZAT POJISTENCE</a></button>
+<button class="" ><a href="{% url 'users_list' %}">Zpet</a></button>
 
 
 </br>
+-----------------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------------
+</br>
+
+</br>
+
+    <button><a href="{% url 'create_contract' %}">VYTVORIT POJISTENI</a></button>
+
+</br>
+
+    <strong>SJEDNANA POJISTENI :</strong><br>
+**************************************************************************
+<br>
+<br>
 
 
-<button class="button-update" ><a href="{% url 'update_user' user.id %}">AKTUALIZOVAT</a></button>
-<button class="button-delete"><a  href="{% url 'delete_user' user.id %}">SMAZAT POJISTENCE</a></button>
+<table>
+        {% for vypis in user.smlouva.all %}
+    <tr>
+
+    <!--
+
+    <td>
+        {{ vypis }}
+    </td>
+
+  -->
+
+    <td>
+
+        <strong>Produkt: </strong> {{vypis.product.product_name }} <br>
+        <strong>Produkt ID : </strong> {{vypis.product.id }}  <br>
+        <strong>Pojisteni cislo:  </strong> {{ vypis.id }}  <br>
+        <strong>Castka:  </strong> {{ vypis.amount }}  <br>
+        <strong>Od:  </strong> {{vypis.start_date}}  <br>
+        <strong>Do:  </strong> {{vypis.end_date}}  <br>
+
+    </td>
+
+
+    <td>
+        <button class="" ><a href="{% url 'update_contract' vypis.id %}">EDITOVAT POJISTENI</a></button>
+    </td>
+
+    <td>
+        <button class="" ><a href="{% url 'delete_contract' vypis.id %}">SMAZAT POJISTENI</a></button>
+    </td>
+
+</tr>
+
+        {% endfor %}
+
+</table>
+
+
+
+
+
+
+
+
 
 
 </br>
-</br>
+**************************************************************************<br>
+<!--
 
-PRIDAT POJISTENI:
+{{ user.smlouva.all }}
 
-</br>
-</br>
-
-
+ZOBRAZI VSECHNY POJISTENI:
+{{ user.smlouva.all }}
 
 
-{% for x in product_list %}
 
-{{ x }}
+<ul>
+
+{% for vypis in user.smlouva.all %}
+
+    <li>{{ vypis }}</li>
 
 
 {% endfor %}
+</ul>
+
+
 
 {% endblock %}
+
+-->

@@ -1,0 +1,24 @@
+{% extends 'insurance/base.html'%}
+
+{% load static %}
+
+{% include 'insurance/navbar.html' %}
+
+{% block content %}
+
+<h3>Aktualizovat pojisteni</h3>
+
+<form action="" method="POST">
+
+  {% csrf_token %}
+
+  {{ form.as_p }}
+
+  <input type="submit" value="Ulozit">
+
+</form>
+
+
+
+
+{% endblock %}

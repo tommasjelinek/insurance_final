@@ -14,12 +14,11 @@
 
     {% if submitted %}
 
-    <p>Your registration was succesfull</p>
+    <p>Pridani pojistence bylo uspesne !</p>
+
+            <button type="button" ><a href="{% url 'users_list' %}">PREJIT NA SEZNAM POJISTENCU</a></button>
 
     {% else %}
-
-
-
 
 
     <form action="" method="POST">
@@ -30,11 +29,11 @@
 
         <input type="submit" value="Pridat">
 
+        <!--
+
         <button type="button" ><a href="{% url 'users_list' %}">Zpet</a></button>
 
-
-
-
+-->
 
     </form>
 

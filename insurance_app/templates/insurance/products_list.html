@@ -1,0 +1,57 @@
+{% extends 'insurance/base.html'%}
+
+{% load static %}
+
+{% include 'insurance/navbar.html' %}
+
+{% block content %}
+
+<h3>PREHLED PRODUKTU :</h3>
+
+
+
+<button><a href="{% url 'add_product' %}">PRIDAT PRODUKT</a></button>
+
+<br>
+
+-------------------------------------------------------------
+
+<table>
+
+{% for product in products_list %}
+
+<tr>
+
+
+
+    <td>
+      {{  product.id  }}
+    </td>
+
+    <td>
+        <button class="" ><a href="{% url 'show_product' product.id %}">{{ product }}</a></button>
+    </td>
+
+    <td>
+        <button class="" ><a href="{% url 'update_product' product.id %}">EDITOVAT PRODUKT</a></button>
+    </td>
+
+    <td>
+        <button class="" ><a href="{% url 'delete_product' product.id %}">SMAZAT PRODUKT</a></button>
+    </td>
+
+
+</tr>
+
+    {% endfor %}
+
+</table>
+
+</br>
+
+
+
+
+
+
+{% endblock %}

@@ -1,0 +1,26 @@
+{% extends 'insurance/base.html'%}
+
+{% load static %}
+
+{% include 'insurance/navbar.html' %}
+
+{% block content %}
+
+<h3>Aktualizovat produkt</h3>
+<br/>
+
+<form action="" method="POST">
+    {% csrf_token %}
+
+
+{{  form.as_p  }}
+    <br/>
+        <input type="submit" value="Ulozit">
+
+        <button onclick="history.back()">ZPET</button>
+
+
+
+</form>
+
+{% endblock %}

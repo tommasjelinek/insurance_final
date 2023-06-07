@@ -1,0 +1,42 @@
+{% extends 'insurance/base.html'%}
+
+{% load static %}
+
+{% include 'insurance/navbar.html' %}
+
+
+
+{% block content %}
+
+<h1>Vytvorit nove pojisteni</h1>
+
+<div class="add_form">
+
+    {% if submitted %}
+
+    <p>Vytvoreni pojisteni probehlo uspesne !</p>
+
+
+
+
+
+    {% else %}
+
+
+        <form action="" method="POST">
+            {% csrf_token %}
+
+            {{ form.as_p}}
+
+
+            <input type="submit" value="Vytvorit">
+
+            <button onclick="history.back()">Zpet</button>
+
+       </form>
+
+   {% endif %}
+
+</div>
+
+{% endblock %}

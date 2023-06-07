@@ -8,12 +8,19 @@
 
 {% block content %}
 
-<h3>Seznam Pojistencu</h3>
+<h3>SEZNAM POJISTENCU :</h3>
+
+<button><a href="{% url 'add_user' %}">PRIDAT POJISTENCE</a></button>
+
+<br>
+
+------------------------------------------------------------------------
 
 <table>
     <tbody>
 
     <tr>
+    <th>ID</th>
     <th>Jmeno</th>
     <th>Adresa</th>
     <th></th>
@@ -21,11 +28,12 @@
 
          {% for user in users_list %}
 
-
-        <td><a href="{% url 'show_user' user.id %}">  {{ user }} </a></td>
+        <td>{{ user.id }}</td>
+        <td>{{ user }}</td>
         <td> {{ user.address }} </td>
-        <td><button class="button-update" ><a href="{% url 'update_user' user.id %}">AKTUALIZOVAT</a></button></td>
-        <td><button class="button-delete"><a  href="{% url 'delete_user' user.id %}">SMAZAT POJISTENCE</a></button></td>
+        <td><button class="" ><a href="{% url 'show_user' user.id %}">DETAIL POJISTENCE</a></button></td>
+        <td><button class="" ><a href="{% url 'update_user' user.id %}">EDITOVAT POJISTENCE</a></button></td>
+        <td><button class=""><a  href="{% url 'delete_user' user.id %}">SMAZAT POJISTENCE</a></button></td>
 
 
          </tbody>

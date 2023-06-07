@@ -1,0 +1,38 @@
+{% extends 'insurance/base.html'%}
+
+{% load static %}
+
+{% include 'insurance/navbar.html' %}
+
+
+
+{% block content %}
+
+<h3>Pridat novy produkt</h3>
+
+<div class="add_form">
+
+    {% if submitted %}
+
+    <p>Pridani produktu probehlo uspesne !</p>
+
+    {% else %}
+
+
+    <form action="" method="POST">
+        {% csrf_token %}
+
+        {{ form.as_p}}
+
+
+        <input type="submit" value="Pridat">
+
+        <button type="button" ><a href="{% url 'products_list' %}">Zpet</a></button>
+
+   </form>
+
+        {% endif %}
+
+</div>
+
+{% endblock %}

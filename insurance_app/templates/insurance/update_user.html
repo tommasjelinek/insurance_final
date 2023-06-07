@@ -13,7 +13,9 @@
   {% csrf_token %}
 {{ form.as_p }}
 
-  <input type="submit" value="Ulozit">
+    <input type="submit" value="Ulozit">
+
+    <button onclick="history.back()">Zpet</button>
 
 </form>
 

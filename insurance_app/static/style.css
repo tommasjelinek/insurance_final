@@ -82,11 +82,13 @@ td {
   color: white;
   padding: 5px 15px;
   text-align: center;
-  text-decoration: none;
+  
   display: inline-block;
   font-size: 12px;
 
 }
+
+
 
 .button-delete {
   background-color: #af4c4c; /* Green */

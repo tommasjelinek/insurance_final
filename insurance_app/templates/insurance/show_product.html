@@ -1,0 +1,23 @@
+{% extends 'insurance/base.html'%}
+
+{% load static %}
+
+{% include 'insurance/navbar.html' %}
+
+{% block content %}
+
+<h3>PRODUCT DETAILS: </h3>
+
+
+
+{{ product}} </br>
+
+</br>
+</br>
+
+
+<button class="" ><a href="{% url 'update_product' product.id %}">EDITOVAT PRODUKT</a></button>
+<button class="" ><a href="{% url 'delete_product' product.id %}">SMAZAT PRODUKT</a></button>
+<button class="" ><a href="{% url 'products_list' %}">Zpet</a></button>
+
+{% endblock %}
